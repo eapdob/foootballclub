@@ -1,5 +1,4 @@
 <?php require_once("../../config.php"); ?>
-
 <?php
 if (isset($_GET['id'])) {
     $query = query("DELETE FROM games WHERE game_id = " . escape_string($_GET['id']) . " ");

@@ -1,34 +1,43 @@
 <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="index.php">Админ</a>
-    <a class="navbar-brand" href="../index.php">Регистрация</a>
+  <button type="button" class="d-md-block d-lg-none" data-toggle="collapse" data-target="#bs-example-navbar-collapse">
+    <span class="far fa-bars"></span>
+  </button>
+  <div class="navbar-container collapse d-lg-block" id="bs-example-navbar-collapse">
+    <ul class="navbar-list">
+      <li>
+        <a href="index.php">Админ</a>
+      </li>
+      <li>
+        <a href="../index.php">Регистрация</a>
+      </li>
+    </ul>
+    <ul class="side-nav">
+      <li>
+        <a href="index.php"><i class="fad fa-file-alt"></i> Список</a>
+      </li>
+      <li>
+        <a href="index.php?game"><i class="fad fa-futbol"></i> Игра</a>
+      </li>
+    </ul>
+  </div>
 </div>
-
-
-<!-- Top Menu Items -->
-<ul class="nav navbar-right top-nav">
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
-            <?php
-            if(isset($_SESSION['username']) ){
-                echo $_SESSION['username'];
-            } else {
-                echo "Незарегистрированный пользователь";
-            }
-            ?>
-
-            <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-
-            <li class="divider"></li>
-            <li>
-                <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Выйти</a>
-            </li>
-        </ul>
-    </li>
+<ul class="nav navbar-right">
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+        <?php
+        if (isset($_SESSION['username'])) {
+            echo $_SESSION['username'];
+        } else {
+            echo "Незарегистрированный пользователь";
+        }
+        ?>
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li class="divider"></li>
+      <li>
+        <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Выйти</a>
+      </li>
+    </ul>
+  </li>
 </ul>
