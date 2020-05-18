@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <p>&copy; foootball.club</p>
+        <p class="text-center">&copy; foootball.club</p>
       </div>
     </div>
   </div>

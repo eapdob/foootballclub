@@ -3,7 +3,12 @@ html, body {
 }
 
 body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -13,6 +18,7 @@ hr {
 
 .navbar {
     background: #fff;
+    -webkit-box-shadow: 1px 1px 0 0 #f3f3f3;
     box-shadow: 1px 1px 0 0 #f3f3f3;
 }
 
@@ -25,7 +31,10 @@ hr {
 
 .page-wrapper {
     margin-top: 56px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
     flex: 1 0 auto;
+    padding-top: 1rem;
 }
 
 .anouncement {
@@ -33,7 +42,11 @@ hr {
 }
 
 .navbar-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     list-style-type: none;
     margin: 0;
@@ -62,18 +75,28 @@ hr {
 }
 
 footer {
+    -ms-flex-negative: 0;
     flex-shrink: 0;
 }
 
 @media screen and (max-width: 992px) {
     .page-wrapper {
         margin-top: 70px;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
         flex: 1 0 auto;
     }
 
     .navbar-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
     }
 

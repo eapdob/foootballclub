@@ -182,7 +182,7 @@ function get_today_players_in_admin()
         $player = <<<DELIMETER
             <tr>
                 <td>{$num_players}</td>
-                <td><a href="index.php?edit_player&id={$row['player_id']}">{$row['player_name']}</td>
+                <td><a href="admin/index.php?edit_player&id={$row['player_id']}">{$row['player_name']}</td>
                 <td>{$row['player_phone']}</td>
                 <td>
                     <a class="btn btn-danger" onclick="return confirm('Ты уверен?');" href="../resources/templates/back/delete_player.php?id={$row['player_id']}">
@@ -229,7 +229,7 @@ function show_game_in_admin()
     while ($row = fetch_array($game_query)) {
         $game = <<<DELIMITER
             <tr>
-                <td><a href="index.php?edit_game&id={$row['game_id']}">&nbsp;{$row['game_field']}</td>
+                <td><a href="admin/index.php?edit_game&id={$row['game_id']}">&nbsp;{$row['game_field']}</td>
                 <td>{$row['game_date']}</td>
                 <td>{$row['game_time']}</td>
                 <td><a class="btn btn-danger" onclick="return confirm('Ты уверен?');" href="../resources/templates/back/delete_game.php?id={$row['game_id']}">
