@@ -77,7 +77,7 @@ function get_current_number_of_players()
 
 function participate_in()
 {
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['submit']) && $_POST['submit']) {
         if ($_POST['player_name'] === "" && $_POST['player_phone'] === "") {
             set_message("<div class=\"alert alert-danger\" role=\"alert\">Введите имя и телефон</div>");
             return;
@@ -197,7 +197,7 @@ DELIMETER;
 
 function update_player()
 {
-    if (isset($_POST['update'])) {
+    if (isset($_POST['update']) && $_POST['update']) {
         if ($_POST['player_name'] === "" && $_POST['player_phone'] === "") {
             set_message("<div class=\"alert alert-danger\" role=\"alert\">Редактируйте имя и телефон</div>");
             return;
@@ -243,7 +243,7 @@ DELIMITER;
 
 function update_game()
 {
-    if ($_POST['update']) {
+    if (isset($_POST['update']) && $_POST['update']) {
         if ($_POST['field'] == 0 && $_POST['date'] === "" && $_POST['time'] === "") {
             set_message("<div class=\"alert alert-danger\" role=\"alert\">Введите поле, дату и время</div>");
             return;
@@ -275,7 +275,7 @@ function update_game()
 
 function add_game()
 {
-    if ($_POST['add_game']) {
+    if (isset($_POST['add_game']) && $_POST['add_game']) {
         if ($_POST['field'] == 0 && $_POST['date'] === "" && $_POST['time'] === "") {
             set_message("<div class=\"alert alert-danger\" role=\"alert\">Введите поле, дату и время</div>");
             return;
