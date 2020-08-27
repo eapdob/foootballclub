@@ -10,7 +10,7 @@
                    placeholder="Телефон 0631234567"></label>
         </div>
         <div class="form-group">
-          <input type="submit" name="submitPhone" class="btn btn-primary" value="Записать">
+          <input type="submit" name="submitUserPhone" class="btn btn-primary" value="Записать">
         </div>
       </form>
     </header>

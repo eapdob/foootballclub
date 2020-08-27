@@ -58,11 +58,11 @@ function is_game_exists()
 
 function get_current_game_id()
 {
-    $game_query = query("SELECT * FROM games");
+    $game_query = query("SELECT * FROM `games` ORDER BY game_id DESC");
     confirm($game_query);
-    while ($row = fetch_array($game_query)) {
-        return $row['game_id'];
-    }
+    $row = fetch_array($game_query);
+
+    return $row['game_id'];
 }
 
 function get_current_number_of_players()
@@ -308,7 +308,7 @@ function add_game()
         confirm($insert_query);
 
         $insert_first_player = query("INSERT INTO players (player_name, player_phone, game_id)
-                                VALUES('{$_SESSION['username']}', '{$_SESSION['user_phone']}', " . escape_string(get_current_game_id()) . ")");
+                                VALUES('{$_SESSION['user_name']}', '{$_SESSION['user_phone']}', " . escape_string(get_current_game_id()) . ")");
         confirm($insert_first_player);
         set_message("<div class=\"alert alert-success\" role=\"alert\">Создали игру</div>");
         redirect("index.php?game");
@@ -325,10 +325,21 @@ function one_game_exists()
     return false;
 }
 
+function set_user_name_in_admin()
+{
+    if (isset($_POST['submitUserName'])) {
+        if (isset($_POST['user_name']) && $_POST['user_name'] !== '') {
+            $user_name = $_POST['user_name'];
+            $_SESSION['user_name'] = $user_name;
+            redirect("index.php");
+        }
+    }
+}
+
 function set_telephone_in_admin()
 {
-    if (isset($_POST['submitPhone'])) {
-        if (isset($_POST['user_phone'])) {
+    if (isset($_POST['submitUserPhone'])) {
+        if (isset($_POST['user_phone']) && $_POST['user_phone'] !== '') {
             $user_phone = $_POST['user_phone'];
             $_SESSION['user_phone'] = $user_phone;
             redirect("index.php");

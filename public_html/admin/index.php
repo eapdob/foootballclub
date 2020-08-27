@@ -8,6 +8,9 @@ if (!isset($_SESSION['username'])) {
 <div class="page-wrapper">
   <div class="container">
       <?php
+      if (!isset($_SESSION['user_name'])) {
+          include(TEMPLATE_BACK . "/name_reg.php");
+      }
       if (!isset($_SESSION['user_phone'])) {
           include(TEMPLATE_BACK . "/phone_reg.php");
       }
